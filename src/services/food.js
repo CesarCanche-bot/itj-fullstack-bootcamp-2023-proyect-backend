@@ -1,6 +1,4 @@
-const { request } = require("express");
 const Food = require("../models/food");
-const food = require("../models/food");
 
 exports.getFoods = async () => {
   let foods = await Food.find().lean().exec();

@@ -2,6 +2,7 @@ const cors = require("cors");
 const express = require("express");
 const mongoose = require("mongoose");
 const FoodRoutes = require("./src/routes/food");
+const OrderRoutes = require("./src/routes/order")
 
 const app = express();
 require("dotenv").config();
@@ -9,6 +10,7 @@ require("dotenv").config();
 app.use(cors());
 app.use(express.json());
 app.use("/foods", FoodRoutes);
+app.use("/orders", OrderRoutes);
 
 const connectDB = async () => {
   try {
