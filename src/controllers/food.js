@@ -31,7 +31,7 @@ exports.createFood = async (req, res) => {
   } catch (err) {
     console.error("err", err);
     res.status(400).json({
-      message: "was not able to create the project",
+      message: "was not able to create the food",
     });
   }
 };
