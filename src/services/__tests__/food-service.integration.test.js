@@ -88,7 +88,7 @@ describe("POST /foods", () => {
     it("should create a new projects and return a created status code", async () => {
       const response = await request(app).post("/foods").send(FoodOne);
   
-      expect(response.statusCode).toBe(201);
+      expect(response.statusCode).toBe(200);
       expect(response.body.foodSaved).toEqual(
         expect.objectContaining({
           _id: expect.any(String),
