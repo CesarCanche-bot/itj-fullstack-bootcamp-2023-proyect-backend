@@ -6,7 +6,7 @@
   "scripts": {
     "start": "nodemon app.js",
     "testCoverage": "jest --coverage",
-    "test": "jest --watch",
+    "test": "jest --watch"
   },
   "author": "",
   "license": "ISC",
@@ -19,6 +19,7 @@
   "devDependencies": {
     "chance": "^1.1.11",
     "jest": "^29.5.0",
-    "nodemon": "^2.0.22"
+    "nodemon": "^2.0.22",
+    "supertest": "^6.3.3"
   }
 }
