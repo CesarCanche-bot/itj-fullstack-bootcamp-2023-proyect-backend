@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("../../../app").app;
+const {app, server} = require("../../../app");
 const Food = require("../../models/food");
 
 const mongoose = require("mongoose");
@@ -10,6 +10,7 @@ beforeAll(async () => {
 
 afterAll(async () => {
   await mongoose.disconnect();
+  server.close();
 });
 
 const FoodOne = {
@@ -88,7 +89,7 @@ describe("POST /foods", () => {
     it("should create a new projects and return a created status code", async () => {
       const response = await request(app).post("/foods").send(FoodOne);
   
-      expect(response.statusCode).toBe(201);
+      expect(response.statusCode).toBe(200);
       expect(response.body.foodSaved).toEqual(
         expect.objectContaining({
           _id: expect.any(String),

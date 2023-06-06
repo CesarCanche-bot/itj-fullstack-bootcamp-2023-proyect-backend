@@ -27,9 +27,9 @@ exports.getFoodById = async (req, res) => {
 exports.createFood = async (req, res) => {
   try {
     let foodSaved = await FoodService.createFood(req.body);
-    res.status(201).json({ message: "Food created", foodSaved: foodSaved });
+    res.status(200).json({ message: "Food created", foodSaved: foodSaved });
   } catch (err) {
-    console.error("err", err);
+    //console.error("err", err);
     res.status(400).json({
       message: "was not able to create the food",
     });
