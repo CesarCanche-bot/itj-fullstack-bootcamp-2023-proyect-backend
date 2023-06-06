@@ -7,7 +7,7 @@
     "start": "nodemon app.js",
     "testCoverage": "jest --coverage",
     "test": "jest --watch",
-    "test-ci": "jest"
+    "test-ci": "jest --verbose"
   },
   "author": "",
   "license": "ISC",

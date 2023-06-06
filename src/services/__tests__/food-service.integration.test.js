@@ -1,5 +1,5 @@
 const request = require("supertest");
-const app = require("../../../app").app;
+const {app, server} = require("../../../app");
 const Food = require("../../models/food");
 
 const mongoose = require("mongoose");
@@ -8,9 +8,9 @@ beforeAll(async () => {
   await mongoose.connect(process.env.DATABASE_URL);
 });
 
-afterAll(async (done) => {
+afterAll(async () => {
   await mongoose.disconnect();
-  await app.close(done);
+  server.close();
 });
 
 const FoodOne = {
