@@ -8,8 +8,9 @@ beforeAll(async () => {
   await mongoose.connect(process.env.DATABASE_URL);
 });
 
-afterAll(async () => {
+afterAll(async (done) => {
   await mongoose.disconnect();
+  await app.close(done);
 });
 
 const FoodOne = {
